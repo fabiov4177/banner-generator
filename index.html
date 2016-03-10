@@ -1,29 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>jQuery Template</title>
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script><script>
-        $(function(){
-          $("button").click(function(){
-    $("h1").css('color', 'orange');
-});
-        });
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Template</title>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script>
+    $(function() {
+      $("button").click(function() {
+        $("h1").css('color', 'black');
+        var button1 = document.getElementById("button1");
+        var button2 = document.getElementById("button2");
+        var name = $('#name').val();
+        var age = $('#age').val();
+        var team = $('input[name="team"]:checked').val();
+        console.log(name);
+        console.log(age);
+        console.log(team);
+        $('#inputs').hide('slow');
+        $("h1").html(team);
+        $('#banner').show('slow');
         
-    </script>
-  </head>
-  <body>
- <h1>Knicks vs Nets</h1> 
- Name: <input id="name">
-  <br>
-  <br>
-  Age: <input id="age"> 
-  <br>
-  <br>
-  <input type="radio" name="team" value="knicks"> Knicks<br>
-  <input type="radio" name="team" value="nets"> Nets<br>
-  <br>
-  <button>Make Banner!</button>
+        if (button1.checked) {
+          console.log("radio1 selected");
+          $(function(){
+          $('div').css('background-color','orange');
+        });
+        }
+        
+        
+        if (button2.checked) {
+          console.log("radio2 selected");
+          $(function(){
+          $('div').css('background-color','black');
+          document.getElementById("y").src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Brooklyn_Nets_newlogo.svg/2000px-Brooklyn_Nets_newlogo.svg.png"
+        });
+        }
+      });
+    });
+  </script>
+  <style>
+    #banner {
+      display: none;
+      height: 500px;
+      width: 1000px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Brooklyn Nets or New York Knicks?</h1>
+  <div id=inputs>
+    Name:
+    <input id="name">
+    <br>
+    <br> Age:
+    <input id="age">
+    <br>
+    <br>
+    <input type="radio" name="team" value="New York Knicks" id="button1"> Knicks
+    <br>
+    <input type="radio" name="team" value="Brooklyn Nets" id="button2"> Nets
+    <br>
+    <br>
+    <button>Make Banner!</button>
+  </div>
   
-  </body>
+
+  <div id=banner>Banner Here:</div>
+
+</body>
+
 </html>
