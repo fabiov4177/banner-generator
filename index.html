@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>jQuery Template</title>
+  <title>Banner</title>
   <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
   <script>
     $(function() {
@@ -20,11 +20,14 @@
         $('#inputs').hide('slow');
         $("h1").html(team);
         $('#banner').show('slow');
+        $("p").html(name + " " + age);
+        
         
         if (button1.checked) {
           console.log("radio1 selected");
           $(function(){
           $('div').css('background-color','orange');
+          document.getElementById("x").src="https://c1.staticflickr.com/3/2856/9163126439_ba341593de_b.jpg"
         });
         }
         
@@ -33,7 +36,8 @@
           console.log("radio2 selected");
           $(function(){
           $('div').css('background-color','black');
-          document.getElementById("y").src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Brooklyn_Nets_newlogo.svg/2000px-Brooklyn_Nets_newlogo.svg.png"
+           $('#text2').css('color', 'white');
+          document.getElementById("y").src="https://c2.staticflickr.com/8/7404/9163061219_0bcc364023_b.jpg"
         });
         }
       });
@@ -44,6 +48,41 @@
       display: none;
       height: 500px;
       width: 1000px;
+    }
+    #y {
+    position: absolute; 
+    left: 90px; 
+    top: 90px; 
+    }
+    
+    #x {
+    position: absolute; 
+    left: 90px; 
+    top: 90px; 
+    
+    }
+    
+    #x {
+    position: absolute; 
+    left: 90px; 
+    top: 90px; 
+    }
+    
+    #text {
+    color: black;
+    position: absolute; 
+    left: 40px; 
+    bottom: 135px; 
+    font-size: 200%;
+    
+    }
+     #text2 {
+    color: black;
+    position: absolute; 
+    left: 40px; 
+    bottom: 135px; 
+    font-size: 200%;
+    
     }
   </style>
 </head>
@@ -67,7 +106,12 @@
   </div>
   
 
-  <div id=banner>Banner Her:</div>
+  <div id=banner>
+  <img id = y height="400" width="700"> 
+  <img id = x height="400" width="700">
+  <p id = text ></p>
+  <p id = text2 ></p>
+  </div>
 
 </body>
 
